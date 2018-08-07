@@ -1,4 +1,5 @@
 # lumen-base-project
+
 ## Structure standar for any project with Lumen 5.6
 
 ## Installation
@@ -6,6 +7,7 @@
 ```sh
 git clone https://github.com/RhinojosaDeveloper/lumen-base-project.git
 ```
+
 
 ## Install dependencies
 
@@ -20,11 +22,13 @@ composer install
 composer update
 ```
 
+
 ## Generate new app  key
 
 ```sh
 php artisan key:generate
 ```
+
 
 ## Running Migrations
 
@@ -35,12 +39,15 @@ php artisan key:generate
 php artisan migrate --seed
 ```
 
-## install Laravel Passport
+
+## Install Laravel Passport
 
 ```sh
 # Install encryption keys and other necessary stuff for Passport
 php artisan passport:install
 ```
+
+
 
 ## Get secret client key from database
 
@@ -51,6 +58,8 @@ select * from oauth_clients;
 ```
 ![alt text](https://github.com/RhinojosaDeveloper/images_for_projects/blob/master/get_passport_secret_id.gif)
 
+
+
 ## Get some username from database
 
 run the following query:
@@ -59,6 +68,8 @@ run the following query:
 select * from users;
 ```
 ![alt text](https://github.com/RhinojosaDeveloper/images_for_projects/blob/master/get_username.gif)
+
+
 
 ## Generate token  
 Set secret client key and login credentials and get Token
@@ -70,13 +81,16 @@ import this API routes collection : https://github.com/RhinojosaDeveloper/lumen-
 ![alt text](https://github.com/RhinojosaDeveloper/images_for_projects/blob/master/generate_token.gif)
 
 
-## Check API REST send token with your request AND ENJOY!!
+
+## Check API REST: send token with your request AND ENJOY!!
 
 Get user list from database
 ![alt text](https://github.com/RhinojosaDeveloper/images_for_projects/blob/master/get_user_list.gif)
 
 insert user into database
 ![alt text](https://github.com/RhinojosaDeveloper/images_for_projects/blob/master/create_user.gif)
+
+
 
 ### Installed routes
 
@@ -98,6 +112,7 @@ PUT    | /usertypes/{id}                          |            | UserTypeControl
 DELETE | /usertypes/{id}                          |            | UserTypeController@destroy                                           | delete a userType | auth
 
 
+
 ### Fractal serialize data conversion
 
 When you send or request data to api rest, the input or output data is in Camel case format.
@@ -106,6 +121,7 @@ When you send or request data to api rest, the input or output data is in Camel 
 # example "user_type_id" in model Lumen
 user_type_id => userTypeId
 ```
+
 
 ### This project uses the following libraries
 
