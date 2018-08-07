@@ -104,7 +104,7 @@ class UserService implements ServiceInterface
          * Check if User have relationthip with other model (can´t remove if exist)
          *
          */
-        if ($this->repository->with('distributions')->find($id)->distributions->first()) {
+        if ($this->repository->with('type')->find($id)->type->first()) {
             return response()->json(
                 ["integrity_reference" => true]
                 , 400

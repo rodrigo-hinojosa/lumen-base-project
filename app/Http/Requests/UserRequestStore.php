@@ -25,7 +25,6 @@ class UserRequestStore extends RequestAbstract
     {
         return [
             'userTypeId' => 'required|numeric',
-            'userStateId' => 'required|numeric',
             'name' => 'required|max:100',
             'lastname' => 'required|max:100',
             'email' => 'required|email|max:100|unique:users,email,NULL,id,deleted_at,NULL',

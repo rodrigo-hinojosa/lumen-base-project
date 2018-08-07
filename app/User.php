@@ -29,7 +29,6 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      */
     protected $fillable = [
         'user_type_id',
-        'user_state_id',
         'name',
         'lastname',
         'email',
@@ -48,14 +47,6 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         'updated_at',
         'deleted_at',
     ];
-
-    /**
-     * Relationship with UserState model
-     */
-    public function state()
-    {
-        return $this->belongsTo(UserState::class);
-    }
 
     /**
      * Relationship with UserType model

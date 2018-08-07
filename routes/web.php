@@ -33,19 +33,6 @@ $router->group(['middleware' => ['cors', 'ctjr']], function () use ($router) {
     });
 
     /**
-     * router list of UserState Model
-     *
-     * @return \Illuminate\Http\Response
-     */
-    $router->group(['prefix' => 'userstates', 'middleware' => ['auth:api']], function () use ($router) {
-        $router->get('', ['uses' => 'UserStateController@index']);
-        $router->get('{id}', ['uses' => 'UserStateController@show']);
-        $router->post('', ['uses' => 'UserStateController@store']);
-        $router->put('{id}', ['uses' => 'UserStateController@update']);
-        $router->delete('{id}', ['uses' => 'UserStateController@destroy']);
-    });
-
-    /**
      * router list of UserType Model
      *
      * @return \Illuminate\Http\Response

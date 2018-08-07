@@ -2,7 +2,6 @@
 
 namespace App\Transformer;
 
-use App\Serializers\DataSerializer;
 use League\Fractal\Manager;
 use League\Fractal\Resource\Item;
 use League\Fractal\Resource\Collection;

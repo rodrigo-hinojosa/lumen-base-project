@@ -17,7 +17,6 @@ class CreateUsersTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->smallInteger('user_type_id')->unsigned();
-            $table->smallInteger('user_state_id')->unsigned();
             $table->string('name', 100);
             $table->string('lastname', 50)->nullable();
             $table->string('email', 100);
@@ -32,7 +31,6 @@ class CreateUsersTable extends Migration
 
         Schema::table('users', function ($table) {
             $table->foreign('user_type_id')->references('id')->on('user_types');
-            $table->foreign('user_state_id')->references('id')->on('user_states');
         });
     }
 

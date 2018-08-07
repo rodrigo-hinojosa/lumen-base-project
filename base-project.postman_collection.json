@@ -1,11 +1,12 @@
 {
 	"info": {
-		"_postman_id": "57ef2e3a-e807-4b8b-b595-f00547dc1e0c",
+		"_postman_id": "6df37151-207a-43a3-9b52-96ca39acf90b",
 		"name": "base-project",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
+			"_postman_id": "4a94f389-e8bd-4695-ae2c-f5c9c59433e7",
 			"name": "Get Tokens",
 			"request": {
 				"method": "POST",
@@ -17,7 +18,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"grant_type\" : \"password\",\n\t\"client_id\" : \"2\",\n\t\"client_secret\" : \"sbKUcs8i8GlnS09zwpnvV1OHlIrMTTjnog8VJRGy\",\n\t\"username\" : \"rozella.schaefer\",\n\t\"password\" : \"pass\",\n\t\"scope\" : \"*\"\n}"
+					"raw": "{\n\t\"grant_type\" : \"password\",\n\t\"client_id\" : \"2\",\n\t\"client_secret\" : \"\",\n\t\"username\" : \"\",\n\t\"password\" : \"pass\",\n\t\"scope\" : \"*\"\n}"
 				},
 				"url": {
 					"raw": "base-project.test/oauth/token",
@@ -34,6 +35,38 @@
 			"response": []
 		},
 		{
+			"_postman_id": "ea2cbf3e-9bcb-445e-a0f9-a9c07f5bfb18",
+			"name": "Get User by Token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer "
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://base-project.test/auth/user",
+					"protocol": "http",
+					"host": [
+						"base-project",
+						"test"
+					],
+					"path": [
+						"auth",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "e8f4b72b-ac8f-4c5b-a626-c8f4599d02a2",
 			"name": "List Users",
 			"request": {
 				"method": "GET",
@@ -44,7 +77,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBlMzhjNDNiMjhiYzM5N2YxODVmY2M0YmUzYTYzOTU2Yzc3NzAxOGFkZmFkMTZkYzc2ZDI0ZmFjNjZiOWY5YWFjNjMyNzA2MjVmZjNlMjg0In0.eyJhdWQiOiIyIiwianRpIjoiMGUzOGM0M2IyOGJjMzk3ZjE4NWZjYzRiZTNhNjM5NTZjNzc3MDE4YWRmYWQxNmRjNzZkMjRmYWM2NmI5ZjlhYWM2MzI3MDYyNWZmM2UyODQiLCJpYXQiOjE1Mjc4ODY3MTIsIm5iZiI6MTUyNzg4NjcxMiwiZXhwIjoxNTU5NDIyNzEyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.nNbTc1fyNrz5kIo1TQANUEBlK7KbbAr-dtkatxgZPLXeQEXPy3U5UAibImmbFnjI5KtcL3anhs186r1YF3HK5yDh2Psio4a7BkmIZmNctkYqBsLGmV7odMbS3-Sdnvx3L4W1TF2BuF9_Jvcyg2JfAQn0JkRdAwBPjWbtrDlvCfMrrQ650gZMUqc-SXs2rridIfiGppVVmJtOwfcmqrDtLIxQCYUTrggj4iaNf0ACcCz3R8J07-E9W2lcTE0zuV6EOiS2h3z5m5V69UDXBRw8aKX1l4wwIchcfRIihOVWt08xNIQdHOxeL_cHweE61Fy0s8E4n9ojET2Ao5Ezz3PreOI0t9gq02aPOOmhO8k5QrBf-wpGGPZI0di-l2fmb7-WGIMvP7SC8XDulC9pOxoOCA7NhJ3Ysk8Iv_RMG2uKOrTiwqEzLsdCISkgvT1DAH1SKj1e7V2Je38_SJDju5Km-duRETgow9hj2nFkw8lMnB_zYlIXE-9_s5czqt9dbgGdvzBwf003iMmS1OuyCQCWV5IzYDgA7sTsH7icI_Ld-2EIOjKnk-2_dgvtF8RO2S0XvrJLVrMVJwWHJGU11qGb3p7doOcp9XMp3Hjk9fkGeH06k6iv_ZzdrS5akaszUPSDEJ5-7kNvIEpnrrmhM7p15iDsPDJ12nJENfkfzITQ9GA"
+						"value": "Bearer "
 					}
 				],
 				"body": {
@@ -66,38 +99,7 @@
 			"response": []
 		},
 		{
-			"name": "List Users State",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBlMzhjNDNiMjhiYzM5N2YxODVmY2M0YmUzYTYzOTU2Yzc3NzAxOGFkZmFkMTZkYzc2ZDI0ZmFjNjZiOWY5YWFjNjMyNzA2MjVmZjNlMjg0In0.eyJhdWQiOiIyIiwianRpIjoiMGUzOGM0M2IyOGJjMzk3ZjE4NWZjYzRiZTNhNjM5NTZjNzc3MDE4YWRmYWQxNmRjNzZkMjRmYWM2NmI5ZjlhYWM2MzI3MDYyNWZmM2UyODQiLCJpYXQiOjE1Mjc4ODY3MTIsIm5iZiI6MTUyNzg4NjcxMiwiZXhwIjoxNTU5NDIyNzEyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.nNbTc1fyNrz5kIo1TQANUEBlK7KbbAr-dtkatxgZPLXeQEXPy3U5UAibImmbFnjI5KtcL3anhs186r1YF3HK5yDh2Psio4a7BkmIZmNctkYqBsLGmV7odMbS3-Sdnvx3L4W1TF2BuF9_Jvcyg2JfAQn0JkRdAwBPjWbtrDlvCfMrrQ650gZMUqc-SXs2rridIfiGppVVmJtOwfcmqrDtLIxQCYUTrggj4iaNf0ACcCz3R8J07-E9W2lcTE0zuV6EOiS2h3z5m5V69UDXBRw8aKX1l4wwIchcfRIihOVWt08xNIQdHOxeL_cHweE61Fy0s8E4n9ojET2Ao5Ezz3PreOI0t9gq02aPOOmhO8k5QrBf-wpGGPZI0di-l2fmb7-WGIMvP7SC8XDulC9pOxoOCA7NhJ3Ysk8Iv_RMG2uKOrTiwqEzLsdCISkgvT1DAH1SKj1e7V2Je38_SJDju5Km-duRETgow9hj2nFkw8lMnB_zYlIXE-9_s5czqt9dbgGdvzBwf003iMmS1OuyCQCWV5IzYDgA7sTsH7icI_Ld-2EIOjKnk-2_dgvtF8RO2S0XvrJLVrMVJwWHJGU11qGb3p7doOcp9XMp3Hjk9fkGeH06k6iv_ZzdrS5akaszUPSDEJ5-7kNvIEpnrrmhM7p15iDsPDJ12nJENfkfzITQ9GA"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"community_id\" : \"asd\",\n\t\"user_type_id\" : 1,\n\t\"user_state_id\" : 1,\n\t\"name\" : \"rodrigo\",\n\t\"lastname\" : \"hinojosa\",\n\t\"email\" : \"asd@asd.cl\",\n\t\"username\" : \"r.hinojosa\",\n\t\"password\" : \"pass\"\n}"
-				},
-				"url": {
-					"raw": "http://base-project.test/userstates",
-					"protocol": "http",
-					"host": [
-						"base-project",
-						"test"
-					],
-					"path": [
-						"userstates"
-					]
-				}
-			},
-			"response": []
-		},
-		{
+			"_postman_id": "6d2f5e33-35db-48cb-8a52-650b8520f39c",
 			"name": "List Users Type",
 			"request": {
 				"method": "GET",
@@ -108,7 +110,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBlMzhjNDNiMjhiYzM5N2YxODVmY2M0YmUzYTYzOTU2Yzc3NzAxOGFkZmFkMTZkYzc2ZDI0ZmFjNjZiOWY5YWFjNjMyNzA2MjVmZjNlMjg0In0.eyJhdWQiOiIyIiwianRpIjoiMGUzOGM0M2IyOGJjMzk3ZjE4NWZjYzRiZTNhNjM5NTZjNzc3MDE4YWRmYWQxNmRjNzZkMjRmYWM2NmI5ZjlhYWM2MzI3MDYyNWZmM2UyODQiLCJpYXQiOjE1Mjc4ODY3MTIsIm5iZiI6MTUyNzg4NjcxMiwiZXhwIjoxNTU5NDIyNzEyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.nNbTc1fyNrz5kIo1TQANUEBlK7KbbAr-dtkatxgZPLXeQEXPy3U5UAibImmbFnjI5KtcL3anhs186r1YF3HK5yDh2Psio4a7BkmIZmNctkYqBsLGmV7odMbS3-Sdnvx3L4W1TF2BuF9_Jvcyg2JfAQn0JkRdAwBPjWbtrDlvCfMrrQ650gZMUqc-SXs2rridIfiGppVVmJtOwfcmqrDtLIxQCYUTrggj4iaNf0ACcCz3R8J07-E9W2lcTE0zuV6EOiS2h3z5m5V69UDXBRw8aKX1l4wwIchcfRIihOVWt08xNIQdHOxeL_cHweE61Fy0s8E4n9ojET2Ao5Ezz3PreOI0t9gq02aPOOmhO8k5QrBf-wpGGPZI0di-l2fmb7-WGIMvP7SC8XDulC9pOxoOCA7NhJ3Ysk8Iv_RMG2uKOrTiwqEzLsdCISkgvT1DAH1SKj1e7V2Je38_SJDju5Km-duRETgow9hj2nFkw8lMnB_zYlIXE-9_s5czqt9dbgGdvzBwf003iMmS1OuyCQCWV5IzYDgA7sTsH7icI_Ld-2EIOjKnk-2_dgvtF8RO2S0XvrJLVrMVJwWHJGU11qGb3p7doOcp9XMp3Hjk9fkGeH06k6iv_ZzdrS5akaszUPSDEJ5-7kNvIEpnrrmhM7p15iDsPDJ12nJENfkfzITQ9GA"
+						"value": "Bearer "
 					}
 				],
 				"body": {
@@ -130,6 +132,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "a24fb3bd-a442-426b-89e3-928c2fe77a65",
 			"name": "Get User",
 			"request": {
 				"method": "GET",
@@ -140,7 +143,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBlMzhjNDNiMjhiYzM5N2YxODVmY2M0YmUzYTYzOTU2Yzc3NzAxOGFkZmFkMTZkYzc2ZDI0ZmFjNjZiOWY5YWFjNjMyNzA2MjVmZjNlMjg0In0.eyJhdWQiOiIyIiwianRpIjoiMGUzOGM0M2IyOGJjMzk3ZjE4NWZjYzRiZTNhNjM5NTZjNzc3MDE4YWRmYWQxNmRjNzZkMjRmYWM2NmI5ZjlhYWM2MzI3MDYyNWZmM2UyODQiLCJpYXQiOjE1Mjc4ODY3MTIsIm5iZiI6MTUyNzg4NjcxMiwiZXhwIjoxNTU5NDIyNzEyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.nNbTc1fyNrz5kIo1TQANUEBlK7KbbAr-dtkatxgZPLXeQEXPy3U5UAibImmbFnjI5KtcL3anhs186r1YF3HK5yDh2Psio4a7BkmIZmNctkYqBsLGmV7odMbS3-Sdnvx3L4W1TF2BuF9_Jvcyg2JfAQn0JkRdAwBPjWbtrDlvCfMrrQ650gZMUqc-SXs2rridIfiGppVVmJtOwfcmqrDtLIxQCYUTrggj4iaNf0ACcCz3R8J07-E9W2lcTE0zuV6EOiS2h3z5m5V69UDXBRw8aKX1l4wwIchcfRIihOVWt08xNIQdHOxeL_cHweE61Fy0s8E4n9ojET2Ao5Ezz3PreOI0t9gq02aPOOmhO8k5QrBf-wpGGPZI0di-l2fmb7-WGIMvP7SC8XDulC9pOxoOCA7NhJ3Ysk8Iv_RMG2uKOrTiwqEzLsdCISkgvT1DAH1SKj1e7V2Je38_SJDju5Km-duRETgow9hj2nFkw8lMnB_zYlIXE-9_s5czqt9dbgGdvzBwf003iMmS1OuyCQCWV5IzYDgA7sTsH7icI_Ld-2EIOjKnk-2_dgvtF8RO2S0XvrJLVrMVJwWHJGU11qGb3p7doOcp9XMp3Hjk9fkGeH06k6iv_ZzdrS5akaszUPSDEJ5-7kNvIEpnrrmhM7p15iDsPDJ12nJENfkfzITQ9GA"
+						"value": "Bearer "
 					}
 				],
 				"body": {
@@ -163,39 +166,7 @@
 			"response": []
 		},
 		{
-			"name": "Get User State",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBlMzhjNDNiMjhiYzM5N2YxODVmY2M0YmUzYTYzOTU2Yzc3NzAxOGFkZmFkMTZkYzc2ZDI0ZmFjNjZiOWY5YWFjNjMyNzA2MjVmZjNlMjg0In0.eyJhdWQiOiIyIiwianRpIjoiMGUzOGM0M2IyOGJjMzk3ZjE4NWZjYzRiZTNhNjM5NTZjNzc3MDE4YWRmYWQxNmRjNzZkMjRmYWM2NmI5ZjlhYWM2MzI3MDYyNWZmM2UyODQiLCJpYXQiOjE1Mjc4ODY3MTIsIm5iZiI6MTUyNzg4NjcxMiwiZXhwIjoxNTU5NDIyNzEyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.nNbTc1fyNrz5kIo1TQANUEBlK7KbbAr-dtkatxgZPLXeQEXPy3U5UAibImmbFnjI5KtcL3anhs186r1YF3HK5yDh2Psio4a7BkmIZmNctkYqBsLGmV7odMbS3-Sdnvx3L4W1TF2BuF9_Jvcyg2JfAQn0JkRdAwBPjWbtrDlvCfMrrQ650gZMUqc-SXs2rridIfiGppVVmJtOwfcmqrDtLIxQCYUTrggj4iaNf0ACcCz3R8J07-E9W2lcTE0zuV6EOiS2h3z5m5V69UDXBRw8aKX1l4wwIchcfRIihOVWt08xNIQdHOxeL_cHweE61Fy0s8E4n9ojET2Ao5Ezz3PreOI0t9gq02aPOOmhO8k5QrBf-wpGGPZI0di-l2fmb7-WGIMvP7SC8XDulC9pOxoOCA7NhJ3Ysk8Iv_RMG2uKOrTiwqEzLsdCISkgvT1DAH1SKj1e7V2Je38_SJDju5Km-duRETgow9hj2nFkw8lMnB_zYlIXE-9_s5czqt9dbgGdvzBwf003iMmS1OuyCQCWV5IzYDgA7sTsH7icI_Ld-2EIOjKnk-2_dgvtF8RO2S0XvrJLVrMVJwWHJGU11qGb3p7doOcp9XMp3Hjk9fkGeH06k6iv_ZzdrS5akaszUPSDEJ5-7kNvIEpnrrmhM7p15iDsPDJ12nJENfkfzITQ9GA"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"community_id\" : \"asd\",\n\t\"user_type_id\" : 1,\n\t\"user_state_id\" : 1,\n\t\"name\" : \"rodrigo\",\n\t\"lastname\" : \"hinojosa\",\n\t\"email\" : \"asd@asd.cl\",\n\t\"username\" : \"r.hinojosa\",\n\t\"password\" : \"pass\"\n}"
-				},
-				"url": {
-					"raw": "http://base-project.test/userstates/1",
-					"protocol": "http",
-					"host": [
-						"base-project",
-						"test"
-					],
-					"path": [
-						"userstates",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
+			"_postman_id": "fa09cf54-77c7-44bf-b58f-9001bb37e621",
 			"name": "Get User Type",
 			"request": {
 				"method": "GET",
@@ -206,7 +177,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBlMzhjNDNiMjhiYzM5N2YxODVmY2M0YmUzYTYzOTU2Yzc3NzAxOGFkZmFkMTZkYzc2ZDI0ZmFjNjZiOWY5YWFjNjMyNzA2MjVmZjNlMjg0In0.eyJhdWQiOiIyIiwianRpIjoiMGUzOGM0M2IyOGJjMzk3ZjE4NWZjYzRiZTNhNjM5NTZjNzc3MDE4YWRmYWQxNmRjNzZkMjRmYWM2NmI5ZjlhYWM2MzI3MDYyNWZmM2UyODQiLCJpYXQiOjE1Mjc4ODY3MTIsIm5iZiI6MTUyNzg4NjcxMiwiZXhwIjoxNTU5NDIyNzEyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.nNbTc1fyNrz5kIo1TQANUEBlK7KbbAr-dtkatxgZPLXeQEXPy3U5UAibImmbFnjI5KtcL3anhs186r1YF3HK5yDh2Psio4a7BkmIZmNctkYqBsLGmV7odMbS3-Sdnvx3L4W1TF2BuF9_Jvcyg2JfAQn0JkRdAwBPjWbtrDlvCfMrrQ650gZMUqc-SXs2rridIfiGppVVmJtOwfcmqrDtLIxQCYUTrggj4iaNf0ACcCz3R8J07-E9W2lcTE0zuV6EOiS2h3z5m5V69UDXBRw8aKX1l4wwIchcfRIihOVWt08xNIQdHOxeL_cHweE61Fy0s8E4n9ojET2Ao5Ezz3PreOI0t9gq02aPOOmhO8k5QrBf-wpGGPZI0di-l2fmb7-WGIMvP7SC8XDulC9pOxoOCA7NhJ3Ysk8Iv_RMG2uKOrTiwqEzLsdCISkgvT1DAH1SKj1e7V2Je38_SJDju5Km-duRETgow9hj2nFkw8lMnB_zYlIXE-9_s5czqt9dbgGdvzBwf003iMmS1OuyCQCWV5IzYDgA7sTsH7icI_Ld-2EIOjKnk-2_dgvtF8RO2S0XvrJLVrMVJwWHJGU11qGb3p7doOcp9XMp3Hjk9fkGeH06k6iv_ZzdrS5akaszUPSDEJ5-7kNvIEpnrrmhM7p15iDsPDJ12nJENfkfzITQ9GA"
+						"value": "Bearer "
 					}
 				],
 				"body": {
@@ -229,6 +200,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "c410b50d-c57a-4681-8956-e78a1f76a902",
 			"name": "Delete User",
 			"request": {
 				"method": "DELETE",
@@ -239,207 +211,12 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjcwN2E2NTkzZmRhMTY4NDA3NDBiYmVkZGY4MmNhMGEzZmMwYWYzNjU1OGVhNzU5NGIxYjg5Yjc2OTdiZDE3MjZkOWQ1NjczMGY1OTY2ZTE1In0.eyJhdWQiOiIyIiwianRpIjoiNzA3YTY1OTNmZGExNjg0MDc0MGJiZWRkZjgyY2EwYTNmYzBhZjM2NTU4ZWE3NTk0YjFiODliNzY5N2JkMTcyNmQ5ZDU2NzMwZjU5NjZlMTUiLCJpYXQiOjE1MjYzMjk1MTksIm5iZiI6MTUyNjMyOTUxOSwiZXhwIjoxNTU3ODY1NTE5LCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.g7dMI6f1Qu84FeXQvcATxN7YuqHhyhk3ciNBRgBjk2FXlLZRjgrLvqxo_PVvWyMlTTT2wCQU4fJ9K3ZopM9nqipo1m9pSPnNS0p6DSYQhDBjEx4doIFLaGJfmgg5W4JiSD0uZdSxCtseJ-jq2vykT3cRZZe6nQL9tfv2jXyX747wbu32vXNVFSrAhWbOPc1e6gZ5BKvsSfJWTu_lGHAN52TTXtdlna-kqtIdQhvy2-GgS3zXcRw8fcYPhMwxs7EU2p4PL3nODB3I7i7CRLDgL4NL4HceNUqv_aXRgIxKOvRFaRJWgVjcINKnxKQpgTY5ec1pCQ8jEkMJAIxQNvFzxZgOwUXkAonnlo5a4ZfoLyudwmJg3KOkb8uHzsW0unZMMdd6Ero4P0hPzCr6wRN1ILuKI-GhLlsMUsZd2ZadTo1_MJL_5wG5L-IjKAzXItDsERaaGyT12Gv3enUmRpxhlisAqu4ICSg-xnbPAM0xOzJXcMyRKA4wCkKgJKU_aS4eLi4TRe10_TiNDQw0xduVNtoQeI3Pwn3D0Fb494ClRv28qnc5qIbDNfACAgH84rZC0vObrCXvbsyRj0vmRns-_-xt0qUPPuEK1xKXp1dnOCVnyuk0CC_pBk3rdOctVrEGcF64OOKeyfq2-RwlUM8dNWOIerRU1hf36ghwM7uO57E"
+						"value": "Bearer "
 					}
 				],
 				"body": {
 					"mode": "raw",
 					"raw": ""
-				},
-				"url": {
-					"raw": "http://base-project.test/users/10",
-					"protocol": "http",
-					"host": [
-						"base-project",
-						"test"
-					],
-					"path": [
-						"users",
-						"10"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete User State",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjcwN2E2NTkzZmRhMTY4NDA3NDBiYmVkZGY4MmNhMGEzZmMwYWYzNjU1OGVhNzU5NGIxYjg5Yjc2OTdiZDE3MjZkOWQ1NjczMGY1OTY2ZTE1In0.eyJhdWQiOiIyIiwianRpIjoiNzA3YTY1OTNmZGExNjg0MDc0MGJiZWRkZjgyY2EwYTNmYzBhZjM2NTU4ZWE3NTk0YjFiODliNzY5N2JkMTcyNmQ5ZDU2NzMwZjU5NjZlMTUiLCJpYXQiOjE1MjYzMjk1MTksIm5iZiI6MTUyNjMyOTUxOSwiZXhwIjoxNTU3ODY1NTE5LCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.g7dMI6f1Qu84FeXQvcATxN7YuqHhyhk3ciNBRgBjk2FXlLZRjgrLvqxo_PVvWyMlTTT2wCQU4fJ9K3ZopM9nqipo1m9pSPnNS0p6DSYQhDBjEx4doIFLaGJfmgg5W4JiSD0uZdSxCtseJ-jq2vykT3cRZZe6nQL9tfv2jXyX747wbu32vXNVFSrAhWbOPc1e6gZ5BKvsSfJWTu_lGHAN52TTXtdlna-kqtIdQhvy2-GgS3zXcRw8fcYPhMwxs7EU2p4PL3nODB3I7i7CRLDgL4NL4HceNUqv_aXRgIxKOvRFaRJWgVjcINKnxKQpgTY5ec1pCQ8jEkMJAIxQNvFzxZgOwUXkAonnlo5a4ZfoLyudwmJg3KOkb8uHzsW0unZMMdd6Ero4P0hPzCr6wRN1ILuKI-GhLlsMUsZd2ZadTo1_MJL_5wG5L-IjKAzXItDsERaaGyT12Gv3enUmRpxhlisAqu4ICSg-xnbPAM0xOzJXcMyRKA4wCkKgJKU_aS4eLi4TRe10_TiNDQw0xduVNtoQeI3Pwn3D0Fb494ClRv28qnc5qIbDNfACAgH84rZC0vObrCXvbsyRj0vmRns-_-xt0qUPPuEK1xKXp1dnOCVnyuk0CC_pBk3rdOctVrEGcF64OOKeyfq2-RwlUM8dNWOIerRU1hf36ghwM7uO57E"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://base-project.test/userstates/3",
-					"protocol": "http",
-					"host": [
-						"base-project",
-						"test"
-					],
-					"path": [
-						"userstates",
-						"3"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete User Type",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjcwN2E2NTkzZmRhMTY4NDA3NDBiYmVkZGY4MmNhMGEzZmMwYWYzNjU1OGVhNzU5NGIxYjg5Yjc2OTdiZDE3MjZkOWQ1NjczMGY1OTY2ZTE1In0.eyJhdWQiOiIyIiwianRpIjoiNzA3YTY1OTNmZGExNjg0MDc0MGJiZWRkZjgyY2EwYTNmYzBhZjM2NTU4ZWE3NTk0YjFiODliNzY5N2JkMTcyNmQ5ZDU2NzMwZjU5NjZlMTUiLCJpYXQiOjE1MjYzMjk1MTksIm5iZiI6MTUyNjMyOTUxOSwiZXhwIjoxNTU3ODY1NTE5LCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.g7dMI6f1Qu84FeXQvcATxN7YuqHhyhk3ciNBRgBjk2FXlLZRjgrLvqxo_PVvWyMlTTT2wCQU4fJ9K3ZopM9nqipo1m9pSPnNS0p6DSYQhDBjEx4doIFLaGJfmgg5W4JiSD0uZdSxCtseJ-jq2vykT3cRZZe6nQL9tfv2jXyX747wbu32vXNVFSrAhWbOPc1e6gZ5BKvsSfJWTu_lGHAN52TTXtdlna-kqtIdQhvy2-GgS3zXcRw8fcYPhMwxs7EU2p4PL3nODB3I7i7CRLDgL4NL4HceNUqv_aXRgIxKOvRFaRJWgVjcINKnxKQpgTY5ec1pCQ8jEkMJAIxQNvFzxZgOwUXkAonnlo5a4ZfoLyudwmJg3KOkb8uHzsW0unZMMdd6Ero4P0hPzCr6wRN1ILuKI-GhLlsMUsZd2ZadTo1_MJL_5wG5L-IjKAzXItDsERaaGyT12Gv3enUmRpxhlisAqu4ICSg-xnbPAM0xOzJXcMyRKA4wCkKgJKU_aS4eLi4TRe10_TiNDQw0xduVNtoQeI3Pwn3D0Fb494ClRv28qnc5qIbDNfACAgH84rZC0vObrCXvbsyRj0vmRns-_-xt0qUPPuEK1xKXp1dnOCVnyuk0CC_pBk3rdOctVrEGcF64OOKeyfq2-RwlUM8dNWOIerRU1hf36ghwM7uO57E"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://base-project.test/usertypes/3",
-					"protocol": "http",
-					"host": [
-						"base-project",
-						"test"
-					],
-					"path": [
-						"usertypes",
-						"3"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create User",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBlMzhjNDNiMjhiYzM5N2YxODVmY2M0YmUzYTYzOTU2Yzc3NzAxOGFkZmFkMTZkYzc2ZDI0ZmFjNjZiOWY5YWFjNjMyNzA2MjVmZjNlMjg0In0.eyJhdWQiOiIyIiwianRpIjoiMGUzOGM0M2IyOGJjMzk3ZjE4NWZjYzRiZTNhNjM5NTZjNzc3MDE4YWRmYWQxNmRjNzZkMjRmYWM2NmI5ZjlhYWM2MzI3MDYyNWZmM2UyODQiLCJpYXQiOjE1Mjc4ODY3MTIsIm5iZiI6MTUyNzg4NjcxMiwiZXhwIjoxNTU5NDIyNzEyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.nNbTc1fyNrz5kIo1TQANUEBlK7KbbAr-dtkatxgZPLXeQEXPy3U5UAibImmbFnjI5KtcL3anhs186r1YF3HK5yDh2Psio4a7BkmIZmNctkYqBsLGmV7odMbS3-Sdnvx3L4W1TF2BuF9_Jvcyg2JfAQn0JkRdAwBPjWbtrDlvCfMrrQ650gZMUqc-SXs2rridIfiGppVVmJtOwfcmqrDtLIxQCYUTrggj4iaNf0ACcCz3R8J07-E9W2lcTE0zuV6EOiS2h3z5m5V69UDXBRw8aKX1l4wwIchcfRIihOVWt08xNIQdHOxeL_cHweE61Fy0s8E4n9ojET2Ao5Ezz3PreOI0t9gq02aPOOmhO8k5QrBf-wpGGPZI0di-l2fmb7-WGIMvP7SC8XDulC9pOxoOCA7NhJ3Ysk8Iv_RMG2uKOrTiwqEzLsdCISkgvT1DAH1SKj1e7V2Je38_SJDju5Km-duRETgow9hj2nFkw8lMnB_zYlIXE-9_s5czqt9dbgGdvzBwf003iMmS1OuyCQCWV5IzYDgA7sTsH7icI_Ld-2EIOjKnk-2_dgvtF8RO2S0XvrJLVrMVJwWHJGU11qGb3p7doOcp9XMp3Hjk9fkGeH06k6iv_ZzdrS5akaszUPSDEJ5-7kNvIEpnrrmhM7p15iDsPDJ12nJENfkfzITQ9GA"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"userTypeId\" : 1,\n\t\"userStateId\" : 1,\n\t\"name\" : \"rodrigo\",\n\t\"lastname\" : \"hinojosa\",\n\t\"email\" : \"asdx@asdx.cl\",\n\t\"username\" : \"r.hinojosax\",\n\t\"password\" : \"pass\"\n}"
-				},
-				"url": {
-					"raw": "http://base-project.test/users",
-					"protocol": "http",
-					"host": [
-						"base-project",
-						"test"
-					],
-					"path": [
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create User State",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBlMzhjNDNiMjhiYzM5N2YxODVmY2M0YmUzYTYzOTU2Yzc3NzAxOGFkZmFkMTZkYzc2ZDI0ZmFjNjZiOWY5YWFjNjMyNzA2MjVmZjNlMjg0In0.eyJhdWQiOiIyIiwianRpIjoiMGUzOGM0M2IyOGJjMzk3ZjE4NWZjYzRiZTNhNjM5NTZjNzc3MDE4YWRmYWQxNmRjNzZkMjRmYWM2NmI5ZjlhYWM2MzI3MDYyNWZmM2UyODQiLCJpYXQiOjE1Mjc4ODY3MTIsIm5iZiI6MTUyNzg4NjcxMiwiZXhwIjoxNTU5NDIyNzEyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.nNbTc1fyNrz5kIo1TQANUEBlK7KbbAr-dtkatxgZPLXeQEXPy3U5UAibImmbFnjI5KtcL3anhs186r1YF3HK5yDh2Psio4a7BkmIZmNctkYqBsLGmV7odMbS3-Sdnvx3L4W1TF2BuF9_Jvcyg2JfAQn0JkRdAwBPjWbtrDlvCfMrrQ650gZMUqc-SXs2rridIfiGppVVmJtOwfcmqrDtLIxQCYUTrggj4iaNf0ACcCz3R8J07-E9W2lcTE0zuV6EOiS2h3z5m5V69UDXBRw8aKX1l4wwIchcfRIihOVWt08xNIQdHOxeL_cHweE61Fy0s8E4n9ojET2Ao5Ezz3PreOI0t9gq02aPOOmhO8k5QrBf-wpGGPZI0di-l2fmb7-WGIMvP7SC8XDulC9pOxoOCA7NhJ3Ysk8Iv_RMG2uKOrTiwqEzLsdCISkgvT1DAH1SKj1e7V2Je38_SJDju5Km-duRETgow9hj2nFkw8lMnB_zYlIXE-9_s5czqt9dbgGdvzBwf003iMmS1OuyCQCWV5IzYDgA7sTsH7icI_Ld-2EIOjKnk-2_dgvtF8RO2S0XvrJLVrMVJwWHJGU11qGb3p7doOcp9XMp3Hjk9fkGeH06k6iv_ZzdrS5akaszUPSDEJ5-7kNvIEpnrrmhM7p15iDsPDJ12nJENfkfzITQ9GA"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"name\" : \"cuarto userStateName\",\n\t\"icon\" : \"icon\",\n\t\"colorIcon\" : \"userStateColorIcon userStateColorIcon\",\n\t\"description\" : \"userTypeDescription userTypeDescription userTypeDescription\"\n}"
-				},
-				"url": {
-					"raw": "http://base-project.test/userstates",
-					"protocol": "http",
-					"host": [
-						"base-project",
-						"test"
-					],
-					"path": [
-						"userstates"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create User Type",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBlMzhjNDNiMjhiYzM5N2YxODVmY2M0YmUzYTYzOTU2Yzc3NzAxOGFkZmFkMTZkYzc2ZDI0ZmFjNjZiOWY5YWFjNjMyNzA2MjVmZjNlMjg0In0.eyJhdWQiOiIyIiwianRpIjoiMGUzOGM0M2IyOGJjMzk3ZjE4NWZjYzRiZTNhNjM5NTZjNzc3MDE4YWRmYWQxNmRjNzZkMjRmYWM2NmI5ZjlhYWM2MzI3MDYyNWZmM2UyODQiLCJpYXQiOjE1Mjc4ODY3MTIsIm5iZiI6MTUyNzg4NjcxMiwiZXhwIjoxNTU5NDIyNzEyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.nNbTc1fyNrz5kIo1TQANUEBlK7KbbAr-dtkatxgZPLXeQEXPy3U5UAibImmbFnjI5KtcL3anhs186r1YF3HK5yDh2Psio4a7BkmIZmNctkYqBsLGmV7odMbS3-Sdnvx3L4W1TF2BuF9_Jvcyg2JfAQn0JkRdAwBPjWbtrDlvCfMrrQ650gZMUqc-SXs2rridIfiGppVVmJtOwfcmqrDtLIxQCYUTrggj4iaNf0ACcCz3R8J07-E9W2lcTE0zuV6EOiS2h3z5m5V69UDXBRw8aKX1l4wwIchcfRIihOVWt08xNIQdHOxeL_cHweE61Fy0s8E4n9ojET2Ao5Ezz3PreOI0t9gq02aPOOmhO8k5QrBf-wpGGPZI0di-l2fmb7-WGIMvP7SC8XDulC9pOxoOCA7NhJ3Ysk8Iv_RMG2uKOrTiwqEzLsdCISkgvT1DAH1SKj1e7V2Je38_SJDju5Km-duRETgow9hj2nFkw8lMnB_zYlIXE-9_s5czqt9dbgGdvzBwf003iMmS1OuyCQCWV5IzYDgA7sTsH7icI_Ld-2EIOjKnk-2_dgvtF8RO2S0XvrJLVrMVJwWHJGU11qGb3p7doOcp9XMp3Hjk9fkGeH06k6iv_ZzdrS5akaszUPSDEJ5-7kNvIEpnrrmhM7p15iDsPDJ12nJENfkfzITQ9GA"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"name\" : \"tercer userTypeName\",\n\t\"description\" : \"userTypeDescription userTypeDescription userTypeDescription\"\n}"
-				},
-				"url": {
-					"raw": "http://base-project.test/usertypes",
-					"protocol": "http",
-					"host": [
-						"base-project",
-						"test"
-					],
-					"path": [
-						"usertypes"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update User",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBlMzhjNDNiMjhiYzM5N2YxODVmY2M0YmUzYTYzOTU2Yzc3NzAxOGFkZmFkMTZkYzc2ZDI0ZmFjNjZiOWY5YWFjNjMyNzA2MjVmZjNlMjg0In0.eyJhdWQiOiIyIiwianRpIjoiMGUzOGM0M2IyOGJjMzk3ZjE4NWZjYzRiZTNhNjM5NTZjNzc3MDE4YWRmYWQxNmRjNzZkMjRmYWM2NmI5ZjlhYWM2MzI3MDYyNWZmM2UyODQiLCJpYXQiOjE1Mjc4ODY3MTIsIm5iZiI6MTUyNzg4NjcxMiwiZXhwIjoxNTU5NDIyNzEyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.nNbTc1fyNrz5kIo1TQANUEBlK7KbbAr-dtkatxgZPLXeQEXPy3U5UAibImmbFnjI5KtcL3anhs186r1YF3HK5yDh2Psio4a7BkmIZmNctkYqBsLGmV7odMbS3-Sdnvx3L4W1TF2BuF9_Jvcyg2JfAQn0JkRdAwBPjWbtrDlvCfMrrQ650gZMUqc-SXs2rridIfiGppVVmJtOwfcmqrDtLIxQCYUTrggj4iaNf0ACcCz3R8J07-E9W2lcTE0zuV6EOiS2h3z5m5V69UDXBRw8aKX1l4wwIchcfRIihOVWt08xNIQdHOxeL_cHweE61Fy0s8E4n9ojET2Ao5Ezz3PreOI0t9gq02aPOOmhO8k5QrBf-wpGGPZI0di-l2fmb7-WGIMvP7SC8XDulC9pOxoOCA7NhJ3Ysk8Iv_RMG2uKOrTiwqEzLsdCISkgvT1DAH1SKj1e7V2Je38_SJDju5Km-duRETgow9hj2nFkw8lMnB_zYlIXE-9_s5czqt9dbgGdvzBwf003iMmS1OuyCQCWV5IzYDgA7sTsH7icI_Ld-2EIOjKnk-2_dgvtF8RO2S0XvrJLVrMVJwWHJGU11qGb3p7doOcp9XMp3Hjk9fkGeH06k6iv_ZzdrS5akaszUPSDEJ5-7kNvIEpnrrmhM7p15iDsPDJ12nJENfkfzITQ9GA"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"userTypeId\" : 1,\n\t\"userStateId\" : 1,\n\t\"name\" : \"rodrigo\",\n\t\"lastname\" : \"hinojosa\",\n\t\"email\" : \"hanna54@wisozk.com\",\n\t\"username\" : \"r.hinojosas\",\n\t\"password\" : \"pass\"\n}"
 				},
 				"url": {
 					"raw": "http://base-project.test/users/1",
@@ -457,7 +234,108 @@
 			"response": []
 		},
 		{
-			"name": "Update User State",
+			"_postman_id": "4e7c37c8-587c-45cf-b85a-9078914beba7",
+			"name": "Delete User Type",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer "
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://base-project.test/usertypes/1",
+					"protocol": "http",
+					"host": [
+						"base-project",
+						"test"
+					],
+					"path": [
+						"usertypes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "7838a7e1-cbe5-41e3-868d-c32692db3c21",
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer "
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userTypeId\" : 1,\n\t\"name\" : \"nombre 2\",\n\t\"lastname\" : \"apellido 2\",\n\t\"email\" : \"asd2@asd2.cl\",\n\t\"username\" : \"username2\",\n\t\"password\" : \"pass\"\n}"
+				},
+				"url": {
+					"raw": "http://base-project.test/users",
+					"protocol": "http",
+					"host": [
+						"base-project",
+						"test"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "81dfeafe-82e4-42dc-b967-563a25baad91",
+			"name": "Create User Type",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer "
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"tercer userTypeName\",\n\t\"description\" : \"userTypeDescription\"\n}"
+				},
+				"url": {
+					"raw": "http://base-project.test/usertypes",
+					"protocol": "http",
+					"host": [
+						"base-project",
+						"test"
+					],
+					"path": [
+						"usertypes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "33cc83d8-dac4-41e3-bbc3-008c7380abab",
+			"name": "Update User",
 			"request": {
 				"method": "PUT",
 				"header": [
@@ -467,29 +345,30 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBlMzhjNDNiMjhiYzM5N2YxODVmY2M0YmUzYTYzOTU2Yzc3NzAxOGFkZmFkMTZkYzc2ZDI0ZmFjNjZiOWY5YWFjNjMyNzA2MjVmZjNlMjg0In0.eyJhdWQiOiIyIiwianRpIjoiMGUzOGM0M2IyOGJjMzk3ZjE4NWZjYzRiZTNhNjM5NTZjNzc3MDE4YWRmYWQxNmRjNzZkMjRmYWM2NmI5ZjlhYWM2MzI3MDYyNWZmM2UyODQiLCJpYXQiOjE1Mjc4ODY3MTIsIm5iZiI6MTUyNzg4NjcxMiwiZXhwIjoxNTU5NDIyNzEyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.nNbTc1fyNrz5kIo1TQANUEBlK7KbbAr-dtkatxgZPLXeQEXPy3U5UAibImmbFnjI5KtcL3anhs186r1YF3HK5yDh2Psio4a7BkmIZmNctkYqBsLGmV7odMbS3-Sdnvx3L4W1TF2BuF9_Jvcyg2JfAQn0JkRdAwBPjWbtrDlvCfMrrQ650gZMUqc-SXs2rridIfiGppVVmJtOwfcmqrDtLIxQCYUTrggj4iaNf0ACcCz3R8J07-E9W2lcTE0zuV6EOiS2h3z5m5V69UDXBRw8aKX1l4wwIchcfRIihOVWt08xNIQdHOxeL_cHweE61Fy0s8E4n9ojET2Ao5Ezz3PreOI0t9gq02aPOOmhO8k5QrBf-wpGGPZI0di-l2fmb7-WGIMvP7SC8XDulC9pOxoOCA7NhJ3Ysk8Iv_RMG2uKOrTiwqEzLsdCISkgvT1DAH1SKj1e7V2Je38_SJDju5Km-duRETgow9hj2nFkw8lMnB_zYlIXE-9_s5czqt9dbgGdvzBwf003iMmS1OuyCQCWV5IzYDgA7sTsH7icI_Ld-2EIOjKnk-2_dgvtF8RO2S0XvrJLVrMVJwWHJGU11qGb3p7doOcp9XMp3Hjk9fkGeH06k6iv_ZzdrS5akaszUPSDEJ5-7kNvIEpnrrmhM7p15iDsPDJ12nJENfkfzITQ9GA"
+						"value": "Bearer "
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\" : \"tercer userStateName\",\n\t\"icon\" : \"icon\",\n\t\"colorIcon\" : \"userStateColorIcon userStateColorIcon\",\n\t\"description\" : \"userTypeDescription userTypeDescription userTypeDescription\"\n}"
+					"raw": "{\n\t\"userTypeId\" : 1,\n\t\"name\" : \"nombre update\",\n\t\"lastname\" : \"apellido update\",\n\t\"email\" : \"asd2@asd2.com\",\n\t\"username\" : \"username_update\",\n\t\"password\" : \"pass\"\n}"
 				},
 				"url": {
-					"raw": "http://base-project.test/userstates/3",
+					"raw": "http://base-project.test/users/1",
 					"protocol": "http",
 					"host": [
 						"base-project",
 						"test"
 					],
 					"path": [
-						"userstates",
-						"3"
+						"users",
+						"1"
 					]
 				}
 			},
 			"response": []
 		},
 		{
+			"_postman_id": "016d4d40-5476-4951-bb45-4bb7753530b4",
 			"name": "Update User Type",
 			"request": {
 				"method": "PUT",
@@ -500,7 +379,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBlMzhjNDNiMjhiYzM5N2YxODVmY2M0YmUzYTYzOTU2Yzc3NzAxOGFkZmFkMTZkYzc2ZDI0ZmFjNjZiOWY5YWFjNjMyNzA2MjVmZjNlMjg0In0.eyJhdWQiOiIyIiwianRpIjoiMGUzOGM0M2IyOGJjMzk3ZjE4NWZjYzRiZTNhNjM5NTZjNzc3MDE4YWRmYWQxNmRjNzZkMjRmYWM2NmI5ZjlhYWM2MzI3MDYyNWZmM2UyODQiLCJpYXQiOjE1Mjc4ODY3MTIsIm5iZiI6MTUyNzg4NjcxMiwiZXhwIjoxNTU5NDIyNzEyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.nNbTc1fyNrz5kIo1TQANUEBlK7KbbAr-dtkatxgZPLXeQEXPy3U5UAibImmbFnjI5KtcL3anhs186r1YF3HK5yDh2Psio4a7BkmIZmNctkYqBsLGmV7odMbS3-Sdnvx3L4W1TF2BuF9_Jvcyg2JfAQn0JkRdAwBPjWbtrDlvCfMrrQ650gZMUqc-SXs2rridIfiGppVVmJtOwfcmqrDtLIxQCYUTrggj4iaNf0ACcCz3R8J07-E9W2lcTE0zuV6EOiS2h3z5m5V69UDXBRw8aKX1l4wwIchcfRIihOVWt08xNIQdHOxeL_cHweE61Fy0s8E4n9ojET2Ao5Ezz3PreOI0t9gq02aPOOmhO8k5QrBf-wpGGPZI0di-l2fmb7-WGIMvP7SC8XDulC9pOxoOCA7NhJ3Ysk8Iv_RMG2uKOrTiwqEzLsdCISkgvT1DAH1SKj1e7V2Je38_SJDju5Km-duRETgow9hj2nFkw8lMnB_zYlIXE-9_s5czqt9dbgGdvzBwf003iMmS1OuyCQCWV5IzYDgA7sTsH7icI_Ld-2EIOjKnk-2_dgvtF8RO2S0XvrJLVrMVJwWHJGU11qGb3p7doOcp9XMp3Hjk9fkGeH06k6iv_ZzdrS5akaszUPSDEJ5-7kNvIEpnrrmhM7p15iDsPDJ12nJENfkfzITQ9GA"
+						"value": "Bearer "
 					}
 				],
 				"body": {
